@@ -1,0 +1,23 @@
+platform :ios, '10.0'
+
+source 'https://github.com/AbdullahAsendar/react-native-private-repo'
+source 'https://github.com/CocoaPods/Specs.git'
+
+target 'MySdk-poc' do
+  use_frameworks!
+  
+  # path to the sdk
+  pod 'MySdk-native', :path=> '../MySdk-native'
+  
+  # If you added this to your private podspec then there is not need for this pod
+  pod 'RNFastImage', :git=> 'git@github.com:DylanVann/react-native-fast-image.git', :tag=> 'v8.3.3'
+  
+
+  target 'MySdk-pocTests' do
+    inherit! :search_paths
+  end
+
+  target 'MySdk-pocUITests' do
+  end
+
+end
